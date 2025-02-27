@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    
+    <div id="home" class="full-screen">
+        <h1 class="hero-title fade-in">P. Sri Harsha Vardan</h1>
+        <p class="hero-subtitle fade-in">Artist | Video Editor | Designer</p>
+    </div>
+
+    <header class="sticky-header">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#artworks">Artworks</a></li>
+                <li><a href="#videos">Video Edits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="full-screen fade-in">
+        <h2>About Me</h2>
+        <p>Brief introduction about your skills, background, and passion for art and video editing.</p>
+    </section>
+
+    <section id="artworks" class="section fade-in">
+        <h2>My Artworks</h2>
+        <div class="gallery grid-layout">
+            <img src="mob.jpg" alt="Artwork 1">
+            <img src="luffy.jpg" alt="Artwork 2">
+            <img src="sukuna.jpg" alt="Artwork 3">
+            <img src="peace.jpg" alt="Artwork 4">
+            <img src="doflamingo.jpg" alt="Artwork 5">
+            <img src="toji.webp" alt="Artwork 6">
+        </div>
+    </section>
+
+    <section id="videos" class="section fade-in">
+        <h2>Video Edits</h2>
+        <div class="gallery grid-layout">
+            <video controls>
+                <source src="reel3.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="reel6.mov" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="reel1.mov" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+        <h2>Contact Me</h2>
+        <p>Email: hk.harshapshv@example.com</p>
+        <p>Insta: sriharsha_4rt</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 sri harsha vardan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            document.querySelectorAll(".fade-in").forEach((el) => {
+                if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            const cursor = document.querySelector(".custom-cursor");
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        document.addEventListener("click", (e) => {
+            const clickEffect = document.createElement("div");
+            clickEffect.className = "click-effect";
+            clickEffect.style.left = `${e.clientX}px`;
+            clickEffect.style.top = `${e.clientY}px`;
+            document.body.appendChild(clickEffect);
+            setTimeout(() => clickEffect.remove(), 500);
+        });
+    </script>
+</body>
+</html>

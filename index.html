@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting Demo</title>
+    <style>
+        /* Basic CSS for some visual enhancements (not strictly required, but good practice) */
+        body {
+            font-family: sans-serif;
+        }
+        h1, h2, h3 {
+            color: #333; /* Darker heading color */
+        }
+        pre {
+            background-color: #f0f0f0; /* Light gray background for pre */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        blockquote {
+            border-left: 5px solid #ccc;
+            padding-left: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Formatting Demonstration</h1>
+
+    <p>This paragraph demonstrates <b>bold</b> text, <i>italic</i> text, and <u>underlined</u> text (though underlines are generally discouraged; use CSS for styling if needed).  We can also use <strong>strong</strong> for emphasis and <em>emphasized</em> text.  <strike>This text is striked through.</strike> or <s>This text is also striked through (s is preferred).</s></p>
+
+    <p>Some smaller text <small>like this</small> and some bigger text <big>like this</big> (though sizing is usually done with CSS).  Subscript: H<sub>2</sub>O and Superscript: x<sup>2</sup>.</p>
+
+    <h2>Headings</h2>
+    <h3>Subheading</h3>
+
+    <hr>  <p>A paragraph with a <br> line break.</p>
+
+    <h2>Lists</h2>
+    <ul>
+        <li>Unordered List Item 1</li>
+        <li>Unordered List Item 2</li>
+    </ul>
+
+    <ol>
+        <li>Ordered List Item 1</li>
+        <li>Ordered List Item 2</li>
+    </ol>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
+
+    <h2>Quotations</h2>
+    <blockquote>
+        This is a longer quotation.  It can span multiple lines.
+    </blockquote>
+
+    <p>A short quotation: <q>To be or not to be.</q> - <cite>Hamlet</cite></p>
+
+    <h2>Code and Preformatted Text</h2>
+    <pre>
+        function myFunction() {
+            // This code preserves whitespace and line breaks.
+            console.log("Hello, world!");
+        }
+    </pre>
+
+    <p>Code example: <code>const myVariable = 10;</code></p>
+    <p>Keyboard input: <kbd>Ctrl + S</kbd> (Save)</p>
+    <p>Sample output: <samp>Error: File not found.</samp></p>
+    <p>Variable: <var>x</var> = 5</p>
+
+    <h2>Semantic HTML5</h2>
+    <p>Highlighted text: <mark>This text is highlighted.</mark></p>
+    <p>Date and time: <time datetime="2023-10-27">October 27, 2023</time></p>
+    <address>
+        Contact: John Doe<br>
+        123 Main Street<br>
+        Anytown, CA 91234
+    </address>
+    <p>An abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+
+</body>
+</html>
