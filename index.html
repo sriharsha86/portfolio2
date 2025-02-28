@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+                     
+    <div id="particles-js"></div>
     <div class="custom-cursor"></div>
     
     <div id="home" class="full-screen">
@@ -80,7 +82,11 @@
     <footer>
         <p>&copy; 2025 sri harsha vardan. All rights reserved.</p>
     </footer>
-
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+        <video id="lightbox-video" class="lightbox-content" controls></video>
+    </div> 
     <script>
         document.addEventListener("scroll", () => {
             document.querySelectorAll(".fade-in").forEach((el) => {
@@ -105,5 +111,73 @@
             setTimeout(() => clickEffect.remove(), 500);
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5
+                },
+                "size": {
+                    "value": 3
+                },
+                "move": {
+                    "speed": 2
+                }
+            }
+        });
+
+        //light box
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxVideo = document.getElementById("lightbox-video");
+    const close = document.querySelector(".close");
+
+    // Function to open lightbox for images
+    document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", function () {
+            lightbox.classList.add("visible");
+            lightboxImg.src = this.src;
+            lightboxImg.style.display = "block";
+            lightboxVideo.style.display = "none";
+        });
+    });
+
+    // Function to open lightbox for videos
+    document.querySelectorAll(".gallery video").forEach((video) => {
+        video.addEventListener("click", function () {
+            lightbox.classList.add("visible");
+            lightboxVideo.src = this.querySelector("source").src;
+            lightboxVideo.style.display = "block";
+            lightboxImg.style.display = "none";
+        });
+    });
+
+    // Function to close lightbox
+    close.addEventListener("click", function () {
+        lightbox.classList.remove("visible");
+        lightboxImg.src = "";
+        lightboxVideo.src = "";
+    });
+
+    // Close when clicking outside content
+    lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove("visible");
+            lightboxImg.src = "";
+            lightboxVideo.src = "";
+        }
+    });
+});
+
+    </script>    
 </body>
 </html>
