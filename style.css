@@ -121,7 +121,7 @@ body {
 }
 
 body {
-    background: linear-gradient(-45deg, #ffdfe6, #8a8a8a, #1a1a1a, #333);
+    background: linear-gradient(-45deg, #aa00ff, #2c0046, #1a1a1a, #333);
     background-size: 400% 400%;
     animation: animate-bg 10s ease infinite;
 }
