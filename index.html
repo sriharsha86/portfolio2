@@ -8,7 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-                     
+    <div id="particles-js"></div>
+    <div class="custom-cursor"></div>
+    <div id="intro-container">
+    <video id="intro-video" autoplay muted>
+        <source src="bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <canvas id="particles-js"></canvas> <!-- Ensure this is inside intro-container -->
+    <div id="intro-overlay">
+        <h1 id="intro-text">Welcome to My Portfolio</h1>
+    </div>
+    <button id="skip-button">Skip</button>
+</div>
+
+    
+    <div id="portfolio-content">
     <div id="particles-js"></div>
     <div class="custom-cursor"></div>
     
@@ -87,6 +102,7 @@
         <img id="lightbox-img" class="lightbox-content">
         <video id="lightbox-video" class="lightbox-content" controls></video>
     </div> 
+    </div>
     <script>
         document.addEventListener("scroll", () => {
             document.querySelectorAll(".fade-in").forEach((el) => {
@@ -176,6 +192,32 @@
             lightboxVideo.src = "";
         }
     });
+});
+
+//intro
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("intro-video");
+    const introContainer = document.getElementById("intro-container");
+    const portfolioContent = document.getElementById("portfolio-content");
+    const skipButton = document.getElementById("skip-button");
+
+    function skipIntro() {
+        introContainer.style.animation = "fadeOut 1s ease-in-out forwards";
+        
+        setTimeout(() => {
+            introContainer.style.display = "none"; // Hide intro
+            portfolioContent.style.display = "block"; // Show portfolio
+            setTimeout(() => {
+                portfolioContent.style.opacity = "1"; // Fade in effect
+            }, 100);
+        }, 1000);
+    }
+
+    // When video ends, fade out intro & show portfolio
+    video.addEventListener("ended", skipIntro);
+
+    // Skip button functionality
+    skipButton.addEventListener("click", skipIntro);
 });
 
     </script>    
